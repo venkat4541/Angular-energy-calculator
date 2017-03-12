@@ -1,10 +1,29 @@
 /* CSS Document */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700|Open+Sans+Condensed:700);
 
-#myCalculator { margin: 0; padding: 0; font-size: 16px; font-family: 'Open Sans', sans-serif; font-weight: 300; line-height: 24px; max-width: 800px; }
+.heading {
+  width: 100%;
+  text-align: center;
+  background: #2d2d2d;
+}
 
+.heading h2 {
+  margin: 0;
+  padding: 10px;
+  color: #eee;
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-transform: uppercase;
+}
 
-/* CSS rules go here */
+#myCalculator {
+  margin: 0 auto;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 24px;
+  max-width: 1200px;
+}
 
 #myCalculator main {
   background: #444;
@@ -14,11 +33,19 @@
   width: 25%;
   float: left;
   text-align: center;
-  padding-top: 110px;
+  padding-top: 150px;
   color: #fff;
   background-repeat: no-repeat;
-  background-position: center 5px;
-  background-size: 63px 100px;
+  background-position: center 15px;
+  background-size: 63px 140px;
+  position: relative;
+}
+
+#myCalculator main section h4 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #myCalculator main::after {
@@ -54,9 +81,9 @@
 
 #myCalculator main h4 {
   font-family: 'Open Sans Condensed', san-serif;
-  font-size: 0.8em;
+  font-size: 0.9em;
   letter-spacing: 1px;
-  margin: 0 0 5px 0;
+  margin: 5px 0;
   text-transform: uppercase;
 }
 
@@ -86,7 +113,7 @@
 }
 
 #myCalculator form {
-  background-color: #000;
+  background-color: #2d2d2d;
   margin: 0;
   padding: 10px 0;
 }
@@ -101,6 +128,7 @@
   float: left;
   text-align: center;
   padding: 10px 0 5px 0;
+  border-left: 1px dashed #545454;
 }
 
 #myCalculator form::after {
@@ -141,6 +169,7 @@
 #myCalculator form input[type=number] {
   width: 50px;
   font-size: 1em;
+  text-align: center;
 }
 
 @media screen and (max-width:500px) {
