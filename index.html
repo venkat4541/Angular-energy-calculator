@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="myCalculator">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,34 +9,34 @@
 		<title>Calculator</title>
 	</head>
 	<body>
-		<div id="myCalculator" class="">
+		<div id="myCalculator" ng-controller="calculatorController">
 			<main>
 				<section class="inc">
 					<div>
 						<h4>Incandescent</h4>
-						<p>100.0</p>
-						<p>13.14</p>
+						<p>{{inc_wattage}}</p>
+						<p>{{inc_cost}}</p>
 					</div>
 				</section>
 				<section class="hal">
 					<div>
 						<h4>Halogen</h4>
-						<p>72.0</p>
-						<p>9.46</p>
+						<p>{{hal_wattage}}</p>
+						<p>{{hal_cost}}</p>
 					</div>
 				</section>
 				<section class="cfl">
 					<div>
 						<h4>CFL</h4>
-						<p>23.4</p>
-						<p>3.07</p>
+						<p>{{cfl_wattage}}</p>
+						<p>{{cfl_cost}}</p>
 					</div>
 				</section>
 				<section class="led">
 					<div>
 						<h4>LED</h4>
-						<p>20.0</p>
-						<p>2.63</p>
+						<p>{{led_wattage}}</p>
+						<p>{{led_cost}}</p>
 					</div>
 				</section>
 			</main>
@@ -44,20 +44,18 @@
 				<div class="">
 					<h4>Lumens</h4>
 					<p>Brightness <br> of bulb</p>
-					<select class="" name="">
-						<option value="600">600</option>
-						<option value="900">900</option>
+					<select ng-change="calculate()" ng-model="current_lumens" ng-options="o as o for o in lumen_options">
 					</select>
 				</div>
 				<div class="">
 					<h4>kWh</h4>
 					<p>Kilowatt-<br>hour cost</p>
-					<input type="number" value="12"> cents
+					<input type="number" ng-change="calculate()" ng-model="current_cost" value="{{current_cost}}"> cents
 				</div>
 				<div class="">
 					<h4>Hours</h4>
 					<p>Usage <br>per day</p>
-					<input type="number" value="3"> cents
+					<input type="number" ng-change="calculate()" ng-model="current_hours" value="{{current_hours}}">
 				</div>
 			</form>
 		</div>
